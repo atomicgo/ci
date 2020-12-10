@@ -19,7 +19,7 @@
 <p align="center">
 <strong><a href="#install">Get The Module</a></strong>
 |
-<strong><a href="https://godoc.org/github.com/atomicgo/{{ .Name }}">Documentation</a></strong>
+<strong><a href="https://pkg.go.dev/github.com/atomicgo/{{ .Name }}">Documentation</a></strong>
 |
 <strong><a href="./CONTRIBUTING.md">Contributing</a></strong>
 </p>
