@@ -31,7 +31,7 @@
 |
 <strong><a href="./CONTRIBUTING.md">Contributing</a></strong>
 |
-<strong><a href="./CONTRIBUTING.md">Code of Conduct</a></strong>
+<strong><a href="./CODE_OF_CONDUCT.md">Code of Conduct</a></strong>
 </p>
 
 ---
