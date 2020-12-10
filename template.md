@@ -27,11 +27,11 @@
 <p align="center">
 <strong><a href="#install">Get The Module</a></strong>
 |
-<strong><a href="https://pkg.go.dev/github.com/atomicgo/{{ .Name }}">Documentation</a></strong>
+<strong><a href="https://pkg.go.dev/github.com/atomicgo/{{ .Name }}" target="_blank">Documentation</a></strong>
 |
-<strong><a href="https://github.com/atomicgo/atomicgo/blob/main/CONTRIBUTING.md">Contributing</a></strong>
+<strong><a href="https://github.com/atomicgo/atomicgo/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></strong>
 |
-<strong><a href="https://github.com/atomicgo/atomicgo/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></strong>
+<strong><a href="https://github.com/atomicgo/atomicgo/blob/main/CODE_OF_CONDUCT.md" target="_blank">Code of Conduct</a></strong>
 </p>
 
 ---
