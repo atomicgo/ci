@@ -29,9 +29,9 @@
 |
 <strong><a href="https://pkg.go.dev/github.com/atomicgo/{{ .Name }}">Documentation</a></strong>
 |
-<strong><a href="./CONTRIBUTING.md">Contributing</a></strong>
+<strong><a href="https://github.com/atomicgo/atomicgo/blob/main/CONTRIBUTING.md">Contributing</a></strong>
 |
-<strong><a href="./CODE_OF_CONDUCT.md">Code of Conduct</a></strong>
+<strong><a href="https://github.com/atomicgo/atomicgo/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></strong>
 </p>
 
 ---
