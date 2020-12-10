@@ -39,7 +39,7 @@ echo "# Running CI System"
 go run github.com/atomicgo/ci
 
 echo "## Generating changelog..."
-go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md
+#go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md
 
 echo "## Go mod tidy..."
 go mod tidy
