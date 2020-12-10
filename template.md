@@ -1,4 +1,6 @@
-# {{ .Name }}
+<h1 align="center">AtomicGo | {{ .Name }}</h1>
+
+<p align="center">
 
 <a href="https://codecov.io/gh/atomicgo/{{ .Name }}">
 <img src="https://img.shields.io/codecov/c/gh/atomicgo/{{ .Name }}?color=magenta&logo=codecov&style=flat-square" alt="Coverage">
@@ -11,6 +13,8 @@
 <a href="https://opensource.org/licenses/MIT">
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License: MIT">
 </a>
+
+</p>
 
 {{ if not .IsCommand  }} 
 
