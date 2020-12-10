@@ -30,6 +30,8 @@
 <strong><a href="https://pkg.go.dev/github.com/atomicgo/{{ .Name }}">Documentation</a></strong>
 |
 <strong><a href="./CONTRIBUTING.md">Contributing</a></strong>
+|
+<strong><a href="./CONTRIBUTING.md">Code of Conduct</a></strong>
 </p>
 
 ---
