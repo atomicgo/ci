@@ -33,6 +33,7 @@ git fetch --tags
 
 echo "## Downloading go modules..."
 go run github.com/robertkrimen/godocdown/godocdown -template /template.md > README.md
+git checkout go.mod # reset go.mod file
 
 echo "# Running CI System"
 go run github.com/atomicgo/ci
