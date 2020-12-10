@@ -3,6 +3,10 @@
 <p align="center">
 
 <a href="https://codecov.io/gh/atomicgo/{{ .Name }}">
+<img src="https://img.shields.io/github/workflow/status/atomicgo/{{ .Name }}/Go?label=tests&style=flat-square" alt="Tests">
+</a>
+
+<a href="https://codecov.io/gh/atomicgo/{{ .Name }}">
 <img src="https://img.shields.io/codecov/c/gh/atomicgo/{{ .Name }}?color=magenta&logo=codecov&style=flat-square" alt="Coverage">
 </a>
 
