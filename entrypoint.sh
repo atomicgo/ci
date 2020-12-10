@@ -32,7 +32,7 @@ echo "## Getting git tags..."
 git fetch --tags
 
 echo "## Downloading go modules..."
-go run github.com/robertkrimen/godocdown -template /template.md
+go run github.com/robertkrimen/godocdown -template /template.md > README.md
 
 echo "# Running CI System"
 go run github.com/atomicgo/ci
