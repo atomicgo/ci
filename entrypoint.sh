@@ -35,7 +35,8 @@ echo "## Downloading go modules..."
 go run github.com/robertkrimen/godocdown/godocdown -template /template.md > README.md
 
 echo "# Running CI System"
-go run github.com/atomicgo/ci
+go run /main.go
+rm /main.go
 
 echo "## Generating changelog..."
 go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md --config /.chglog/config.yml || true
