@@ -62,6 +62,6 @@ import "github.com/atomicgo/{{ .Name }}"
 
 ---
 
-> [AtomicGo](https://github.com/AtomicGo) &nbsp;&middot;&nbsp;
+> [AtomicGo.dev](https://atomicgo.dev) &nbsp;&middot;&nbsp;
 > with ❤️ by [@MarvinJWendt](https://github.com/MarvinJWendt) |
 > [MarvinJWendt.com](https://marvinjwendt.com)
