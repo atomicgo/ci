@@ -44,6 +44,8 @@
 go get -u github.com/atomicgo/{{ .Name }}
 ```
 
+{{ .ImportPath }}
+
 ## Import
 
 ```go
