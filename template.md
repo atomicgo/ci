@@ -2,12 +2,20 @@
 
 <p align="center">
 
+<a href="https://github.com/atomicgo/{{ .Name }}/releases">
+<img src="https://img.shields.io/github/v/release/atomicgo/{{ .Name }}?style=flat-square" alt="Latest Release">
+</a>
+
 <a href="https://codecov.io/gh/atomicgo/{{ .Name }}" target="_blank">
 <img src="https://img.shields.io/github/workflow/status/atomicgo/{{ .Name }}/Go?label=tests&style=flat-square" alt="Tests">
 </a>
 
 <a href="https://codecov.io/gh/atomicgo/{{ .Name }}" target="_blank">
 <img src="https://img.shields.io/codecov/c/gh/atomicgo/{{ .Name }}?color=magenta&logo=codecov&style=flat-square" alt="Coverage">
+</a>
+
+<a href="https://codecov.io/gh/atomicgo/{{ .Name }}">
+<!-- unittestcount:start --><img src="https://img.shields.io/badge/Unit_Tests-0-magenta?style=flat-square" alt="Unit test count"><!-- unittestcount:end -->
 </a>
 
 <a href="https://github.com/atomicgo/{{ .Name }}/issues">
