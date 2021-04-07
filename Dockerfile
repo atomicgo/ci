@@ -5,6 +5,7 @@ FROM alpine:latest
 COPY LICENSE README.md /
 COPY entrypoint.sh /entrypoint.sh
 COPY template.md /template.md
+COPY .chglog /.chglog
 
 # Install some packages
 RUN apk add jq bash git go sudo
