@@ -28,8 +28,6 @@
 
 </p>
 
-{{ if not .IsCommand  }} 
-
 ---
 
 <p align="center">
@@ -43,6 +41,8 @@
 </p>
 
 ---
+
+![AtomicGo Logo](https://raw.githubusercontent.com/atomicgo/atomicgo/main/assets/header.png)
 
 {{ .EmitSynopsis }}
 
@@ -60,18 +60,8 @@ import "github.com/atomicgo/{{ .Name }}"
 
 {{ .EmitUsage }}
 
-{{ else }}
+---
 
-## Install
-
-```console
-go get -u github.com/atomicgo/{{ .Name }}
-```
-
-## Usage
-
-```console
-{{ .Name }} -help
-```
-
-{{ end }}
+> [AtomicGo](https://github.com/AtomicGo) &nbsp;&middot;&nbsp;
+> with ❤️ by [@MarvinJWendt](https://github.com/MarvinJWendt) |
+> [MarvinJWendt.com](https://marvinjwendt.com)
