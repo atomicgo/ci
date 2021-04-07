@@ -38,7 +38,7 @@ echo "# Running CI System"
 go run github.com/atomicgo/ci
 
 echo "## Generating changelog..."
-go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md --config /.chglog/config.yml
+go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md --config /.chglog/config.yml || true
 
 echo "## Go mod tidy..."
 git checkout go.mod # reset go.mod file
