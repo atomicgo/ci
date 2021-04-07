@@ -17,9 +17,9 @@ if [[ $BRANCH == refs/tags* ]]; then
 fi
 
 echo "### git fetch $BRANCH ..."
-git fetch origin $BRANCH
+git fetch origin "$BRANCH"
 echo "### Branch: $BRANCH (ref: $GITHUB_REF )"
-git checkout $BRANCH
+git checkout "$BRANCH"
 
 echo "## Login into git..."
 git config --global user.email "git@marvinjwendt.com"
@@ -33,15 +33,15 @@ git fetch --tags
 
 echo "## Downloading go modules..."
 go run github.com/robertkrimen/godocdown/godocdown -template /template.md > README.md
-git checkout go.mod # reset go.mod file
 
 echo "# Running CI System"
 go run github.com/atomicgo/ci
 
 echo "## Generating changelog..."
-go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md
+go run github.com/git-chglog/git-chglog/cmd/git-chglog -o CHANGELOG.md --config /.chglog/config.yml
 
 echo "## Go mod tidy..."
+git checkout go.mod # reset go.mod file
 go mod tidy
 
 echo "## Go fmt..."
@@ -49,7 +49,7 @@ go fmt ./...
 
 echo "## Staging changes..."
 git add .
-echo "## Commiting files..."
+echo "## Committing files..."
 git commit -m "docs: autoupdate" || true
 echo "## Pushing to $BRANCH"
-git push -u origin $BRANCH
+git push -u origin "$BRANCH"
