@@ -3,16 +3,14 @@
 ---
 
 <p align="center">
-<strong><a href="https://github.com/atomicgo">AtomicGo Libraries</a></strong>
+<strong><a href="https://atomicgo.dev">AtomicGo Libraries</a></strong>
 |
-<strong><a href="https://pkg.go.dev/github.com/atomicgo/template" target="_blank">Conventions</a></strong>
-|
-<strong><a href="https://github.com/atomicgo/atomicgo/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></strong>
+<strong><a href="https://github.com/atomicgo/.github/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></strong>
 </p>
 
 ---
 
-<p align="center">AtomicGo is a collection of small Go libraries, which help you to code faster and more efficient!</p>
+<p align="center">This repository contains the CI system of AtomicGo repositories!</p>
 
 ![AtomicGo](https://raw.githubusercontent.com/atomicgo/atomicgo/main/assets/header.png "AtomicGo")
 
