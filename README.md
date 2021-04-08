@@ -12,5 +12,6 @@
 
 <p align="center">This repository contains the CI system of AtomicGo repositories!</p>
 
-![AtomicGo](https://raw.githubusercontent.com/atomicgo/atomicgo/main/assets/header.png "AtomicGo")
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/atomicgo/atomicgo/main/assets/header.png" alt="AtomicGo">
+</p>

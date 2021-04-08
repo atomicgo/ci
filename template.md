@@ -42,19 +42,23 @@
 
 ---
 
-![AtomicGo Logo](https://raw.githubusercontent.com/atomicgo/atomicgo/main/assets/header.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/atomicgo/atomicgo/main/assets/header.png" alt="AtomicGo">
+</p>
+
+## Description
 
 {{ .EmitSynopsis }}
 
 ## Install
 
 ```console
+# Execute this command inside your project
 go get -u github.com/atomicgo/{{ .Name }}
 ```
 
-## Import
-
 ```go
+// Add this to your imports
 import "github.com/atomicgo/{{ .Name }}"
 ```
 
