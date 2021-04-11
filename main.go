@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"os"
 	"os/exec"
-	"path/filepath"
 	"regexp"
 	"strings"
 	"time"
@@ -17,6 +15,15 @@ func main() {
 	if err != nil {
 		log.Panic(err)
 	}
+
+	goModContent, err := ioutil.ReadFile("./go.mod")
+	if err != nil {
+		log.Panic(err)
+	}
+
+	repoNameRegex, _ := regexp.Compile(`(?m)module github\.com/atomicgo/(?P<repo>.*)`)
+	repoNameMatches, _ := stringToMap(repoNameRegex, string(goModContent))
+	repoName := repoNameMatches["repo"]
 
 	var newReadmeContent string
 	fmt.Println(3, "### Counting unit tests...")
@@ -34,9 +41,6 @@ func main() {
 	fmt.Println(4, "#### Replacing strings in readme")
 
 	newReadmeContent = string(readmeContent)
-
-	currentDir, _ := os.Getwd()
-	currentDirName := filepath.Base(currentDir)
 
 	badges := strings.ReplaceAll(`<a href="https://github.com/atomicgo/%REPO%/releases">
 <img src="https://img.shields.io/github/v/release/atomicgo/%REPO%?style=flat-square" alt="Latest Release">
@@ -56,7 +60,7 @@ func main() {
 
 <a href="https://github.com/atomicgo/%REPO%/issues">
 <img src="https://img.shields.io/github/issues/atomicgo/%REPO%.svg?style=flat-square" alt="Issues">
-</a>`, "%REPO%", currentDirName)
+</a>`, "%REPO%", repoName)
 
 	newReadmeContent = writeBetween("badges", newReadmeContent, badges)
 
@@ -85,4 +89,14 @@ func writeBetween(name string, original string, insertText string) string {
 	ret += after
 
 	return ret
+}
+
+func stringToMap(r *regexp.Regexp, s string) (map[string]string, error) {
+	names := r.SubexpNames()
+	result := r.FindAllStringSubmatch(s, -1)
+	m := map[string]string{}
+	for i, n := range result[0] {
+		m[names[i]] = n
+	}
+	return m, nil
 }
