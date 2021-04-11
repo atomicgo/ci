@@ -16,14 +16,6 @@ func main() {
 		log.Panic(err)
 	}
 
-	goModContent, err := ioutil.ReadFile("./go.mod")
-	if err != nil {
-		log.Panic(err)
-	}
-
-	repoNameMatches, _ := stringToMap(regexp.MustCompile(`(?m)module github\.com/atomicgo/(?P<repo>.*)`), string(goModContent))
-	repoName := repoNameMatches["repo"]
-
 	var newReadmeContent string
 	fmt.Println(3, "### Counting unit tests...")
 
@@ -40,33 +32,6 @@ func main() {
 	fmt.Println(4, "#### Replacing strings in readme")
 
 	newReadmeContent = string(readmeContent)
-
-	badges := strings.ReplaceAll(`<a href="https://github.com/atomicgo/%REPO%/releases">
-<img src="https://img.shields.io/github/v/release/atomicgo/%REPO%?style=flat-square" alt="Latest Release">
-</a>
-
-<a href="https://codecov.io/gh/atomicgo/%REPO%" target="_blank">
-<img src="https://img.shields.io/github/workflow/status/atomicgo/%REPO%/Go?label=tests&style=flat-square" alt="Tests">
-</a>
-
-<a href="https://codecov.io/gh/atomicgo/%REPO%" target="_blank">
-<img src="https://img.shields.io/codecov/c/gh/atomicgo/%REPO%?color=magenta&logo=codecov&style=flat-square" alt="Coverage">
-</a>
-
-<a href="https://codecov.io/gh/atomicgo/%REPO%">
-<!-- unittestcount:start --><img src="https://img.shields.io/badge/Unit_Tests-0-magenta?style=flat-square" alt="Unit test count"><!-- unittestcount:end -->
-</a>
-
-<a href="https://github.com/atomicgo/%REPO%/issues">
-<img src="https://img.shields.io/github/issues/atomicgo/%REPO%.svg?style=flat-square" alt="Issues">
-</a>`, "%REPO%", repoName)
-
-	newReadmeContent = writeBetween("badges", newReadmeContent, badges)
-
-	installScript := "```console\n# Execute this command inside your project\ngo get -u github.com/atomicgo/" + repoName + "\n```\n\n"
-
-	newReadmeContent = writeBetween("install", installScript, badges)
-	newReadmeContent = writeBetween("reponame", repoName, badges)
 
 	select {
 	case res := <-unittestTimeout:
@@ -93,14 +58,4 @@ func writeBetween(name string, original string, insertText string) string {
 	ret += after
 
 	return ret
-}
-
-func stringToMap(r *regexp.Regexp, s string) (map[string]string, error) {
-	names := r.SubexpNames()
-	result := r.FindAllStringSubmatch(s, -1)
-	m := map[string]string{}
-	for i, n := range result[0] {
-		m[names[i]] = n
-	}
-	return m, nil
 }

@@ -2,7 +2,25 @@
 
 <p align="center">
 
-<!-- badges:start --><!-- badges:end -->
+<a href="https://github.com/atomicgo/{{ .Name }}/releases">
+<img src="https://img.shields.io/github/v/release/atomicgo/{{ .Name }}?style=flat-square" alt="Latest Release">
+</a>
+
+<a href="https://codecov.io/gh/atomicgo/{{ .Name }}" target="_blank">
+<img src="https://img.shields.io/github/workflow/status/atomicgo/{{ .Name }}/Go?label=tests&style=flat-square" alt="Tests">
+</a>
+
+<a href="https://codecov.io/gh/atomicgo/{{ .Name }}" target="_blank">
+<img src="https://img.shields.io/codecov/c/gh/atomicgo/{{ .Name }}?color=magenta&logo=codecov&style=flat-square" alt="Coverage">
+</a>
+
+<a href="https://codecov.io/gh/atomicgo/{{ .Name }}">
+<!-- unittestcount:start --><img src="https://img.shields.io/badge/Unit_Tests-0-magenta?style=flat-square" alt="Unit test count"><!-- unittestcount:end -->
+</a>
+
+<a href="https://github.com/atomicgo/{{ .Name }}/issues">
+<img src="https://img.shields.io/github/issues/atomicgo/{{ .Name }}.svg?style=flat-square" alt="Issues">
+</a>
 
 <a href="https://opensource.org/licenses/MIT" target="_blank">
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License: MIT">
@@ -15,7 +33,7 @@
 <p align="center">
 <strong><a href="#install">Get The Module</a></strong>
 |
-<strong><a href="https://pkg.go.dev/github.com/atomicgo/<!-- reponame:start --><!-- reponame:end -->" target="_blank">Documentation</a></strong>
+<strong><a href="https://pkg.go.dev/github.com/atomicgo/{{ .Name }}" target="_blank">Documentation</a></strong>
 |
 <strong><a href="https://github.com/atomicgo/atomicgo/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></strong>
 |
@@ -34,7 +52,15 @@
 
 ## Install
 
-<!-- install:start --><!-- install:end -->
+```console
+# Execute this command inside your project
+go get -u github.com/atomicgo/{{ .Name }}
+```
+
+```go
+// Add this to your imports
+import "github.com/atomicgo/{{ .Name }}"
+```
 
 {{ .EmitUsage }}
 
