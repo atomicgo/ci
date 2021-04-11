@@ -63,6 +63,11 @@ func main() {
 
 	newReadmeContent = writeBetween("badges", newReadmeContent, badges)
 
+	installScript := "```console\n# Execute this command inside your project\ngo get -u github.com/atomicgo/" + repoName + "\n```\n\n"
+
+	newReadmeContent = writeBetween("install", installScript, badges)
+	newReadmeContent = writeBetween("reponame", repoName, badges)
+
 	select {
 	case res := <-unittestTimeout:
 		newReadmeContent = writeBetween("unittestcount", newReadmeContent, `<img src="https://img.shields.io/badge/Unit_Tests-`+res+`-magenta?style=flat-square" alt="Unit test count">`)

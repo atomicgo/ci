@@ -34,15 +34,7 @@
 
 ## Install
 
-```console
-# Execute this command inside your project
-go get -u github.com/atomicgo/{{ .Name }}
-```
-
-```go
-// Add this to your imports
-import "github.com/atomicgo/{{ .Name }}"
-```
+<!-- install:start --><!-- install:end -->
 
 {{ .EmitUsage }}
 
