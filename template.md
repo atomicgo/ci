@@ -2,25 +2,7 @@
 
 <p align="center">
 
-<a href="https://github.com/atomicgo/<!-- reponame:start --><!-- reponame:end -->/releases">
-<img src="https://img.shields.io/github/v/release/atomicgo/<!-- reponame:start --><!-- reponame:end -->?style=flat-square" alt="Latest Release">
-</a>
-
-<a href="https://codecov.io/gh/atomicgo/<!-- reponame:start --><!-- reponame:end -->" target="_blank">
-<img src="https://img.shields.io/github/workflow/status/atomicgo/<!-- reponame:start --><!-- reponame:end -->/Go?label=tests&style=flat-square" alt="Tests">
-</a>
-
-<a href="https://codecov.io/gh/atomicgo/<!-- reponame:start --><!-- reponame:end -->" target="_blank">
-<img src="https://img.shields.io/codecov/c/gh/atomicgo/<!-- reponame:start --><!-- reponame:end -->?color=magenta&logo=codecov&style=flat-square" alt="Coverage">
-</a>
-
-<a href="https://codecov.io/gh/atomicgo/<!-- reponame:start --><!-- reponame:end -->">
-<!-- unittestcount:start --><img src="https://img.shields.io/badge/Unit_Tests-0-magenta?style=flat-square" alt="Unit test count"><!-- unittestcount:end -->
-</a>
-
-<a href="https://github.com/atomicgo/<!-- reponame:start --><!-- reponame:end -->/issues">
-<img src="https://img.shields.io/github/issues/atomicgo/<!-- reponame:start --><!-- reponame:end -->.svg?style=flat-square" alt="Issues">
-</a>
+<!-- badges:start --><!-- badges:end -->
 
 <a href="https://opensource.org/licenses/MIT" target="_blank">
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License: MIT">
