@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"os/exec"
+	"path/filepath"
 	"regexp"
 	"strings"
 	"time"
@@ -39,6 +41,11 @@ func main() {
 	case <-time.After(time.Second * 10):
 		fmt.Println(4, "Timeout in counting unit tests!")
 	}
+
+	currentDir, _ := os.Getwd()
+	currentDirName := filepath.Base(currentDir)
+
+	newReadmeContent = writeBetween("reponame", newReadmeContent, currentDirName)
 
 	fmt.Println(4, "### Writing readme")
 	err = ioutil.WriteFile("./README.md", []byte(newReadmeContent), 0600)

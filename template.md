@@ -2,24 +2,24 @@
 
 <p align="center">
 
-<a href="https://github.com/atomicgo/{{ .Name }}/releases">
-<img src="https://img.shields.io/github/v/release/atomicgo/{{ .Name }}?style=flat-square" alt="Latest Release">
+<a href="https://github.com/atomicgo/<!-- reponame:start --><!-- reponame:end -->/releases">
+<img src="https://img.shields.io/github/v/release/atomicgo/<!-- reponame:start --><!-- reponame:end -->?style=flat-square" alt="Latest Release">
 </a>
 
-<a href="https://codecov.io/gh/atomicgo/{{ .Name }}" target="_blank">
-<img src="https://img.shields.io/github/workflow/status/atomicgo/{{ .Name }}/Go?label=tests&style=flat-square" alt="Tests">
+<a href="https://codecov.io/gh/atomicgo/<!-- reponame:start --><!-- reponame:end -->" target="_blank">
+<img src="https://img.shields.io/github/workflow/status/atomicgo/<!-- reponame:start --><!-- reponame:end -->/Go?label=tests&style=flat-square" alt="Tests">
 </a>
 
-<a href="https://codecov.io/gh/atomicgo/{{ .Name }}" target="_blank">
-<img src="https://img.shields.io/codecov/c/gh/atomicgo/{{ .Name }}?color=magenta&logo=codecov&style=flat-square" alt="Coverage">
+<a href="https://codecov.io/gh/atomicgo/<!-- reponame:start --><!-- reponame:end -->" target="_blank">
+<img src="https://img.shields.io/codecov/c/gh/atomicgo/<!-- reponame:start --><!-- reponame:end -->?color=magenta&logo=codecov&style=flat-square" alt="Coverage">
 </a>
 
-<a href="https://codecov.io/gh/atomicgo/{{ .Name }}">
+<a href="https://codecov.io/gh/atomicgo/<!-- reponame:start --><!-- reponame:end -->">
 <!-- unittestcount:start --><img src="https://img.shields.io/badge/Unit_Tests-0-magenta?style=flat-square" alt="Unit test count"><!-- unittestcount:end -->
 </a>
 
-<a href="https://github.com/atomicgo/{{ .Name }}/issues">
-<img src="https://img.shields.io/github/issues/atomicgo/{{ .Name }}.svg?style=flat-square" alt="Issues">
+<a href="https://github.com/atomicgo/<!-- reponame:start --><!-- reponame:end -->/issues">
+<img src="https://img.shields.io/github/issues/atomicgo/<!-- reponame:start --><!-- reponame:end -->.svg?style=flat-square" alt="Issues">
 </a>
 
 <a href="https://opensource.org/licenses/MIT" target="_blank">
@@ -33,7 +33,7 @@
 <p align="center">
 <strong><a href="#install">Get The Module</a></strong>
 |
-<strong><a href="https://pkg.go.dev/github.com/atomicgo/{{ .Name }}" target="_blank">Documentation</a></strong>
+<strong><a href="https://pkg.go.dev/github.com/atomicgo/<!-- reponame:start --><!-- reponame:end -->" target="_blank">Documentation</a></strong>
 |
 <strong><a href="https://github.com/atomicgo/atomicgo/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></strong>
 |
