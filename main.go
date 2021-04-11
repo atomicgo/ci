@@ -56,7 +56,7 @@ func main() {
 
 <a href="https://github.com/atomicgo/%REPO%/issues">
 <img src="https://img.shields.io/github/issues/atomicgo/%REPO%.svg?style=flat-square" alt="Issues">
-</a>`, "%REPO", currentDirName)
+</a>`, "%REPO%", currentDirName)
 
 	newReadmeContent = writeBetween("badges", newReadmeContent, badges)
 
