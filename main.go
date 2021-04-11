@@ -21,8 +21,7 @@ func main() {
 		log.Panic(err)
 	}
 
-	repoNameRegex, _ := regexp.Compile(`(?m)module github\.com/atomicgo/(?P<repo>.*)`)
-	repoNameMatches, _ := stringToMap(repoNameRegex, string(goModContent))
+	repoNameMatches, _ := stringToMap(regexp.MustCompile(`(?m)module github\.com/atomicgo/(?P<repo>.*)`), string(goModContent))
 	repoName := repoNameMatches["repo"]
 
 	var newReadmeContent string
