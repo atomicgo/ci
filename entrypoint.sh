@@ -31,8 +31,13 @@ git update-index --assume-unchanged .github/workflows/*
 echo "## Getting git tags..."
 git fetch --tags
 
-echo "## Downloading go modules..."
-go run github.com/robertkrimen/godocdown/godocdown -template /template.md > README.md
+echo "## Generating readme..."
+FILE=./.github/custom_readme
+if test -f "$FILE"; then
+  echo ".github/custom_readme is present. Not generating a new readme."
+else
+  go run github.com/robertkrimen/godocdown/godocdown -template /template.md >README.md
+fi
 
 echo "# Running CI System"
 go run /main.go
