@@ -36,7 +36,7 @@ func main() {
 	select {
 	case res := <-unittestTimeout:
 		newReadmeContent = writeBetween("unittestcount", newReadmeContent, `<img src="https://img.shields.io/badge/Unit_Tests-`+res+`-magenta?style=flat-square" alt="Unit test count">`)
-	case <-time.After(time.Second * 10):
+	case <-time.After(time.Minute):
 		fmt.Println(4, "Timeout in counting unit tests!")
 	}
 
