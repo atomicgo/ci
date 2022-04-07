@@ -9,9 +9,10 @@ COPY .chglog /.chglog
 COPY main.go /main.go
 
 # Install some packages
-RUN apk add jq bash git go sudo
+RUN apk add jq bash git sudo
 RUN apk add --no-cache --upgrade grep
 RUN apk --no-cache add findutils
+RUN apk --no-cache add go
 
 # Start action
 ENTRYPOINT ["/entrypoint.sh"]
