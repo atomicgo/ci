@@ -15,7 +15,7 @@ RUN apk update
 RUN apk add jq bash git sudo
 RUN apk add --no-cache --upgrade grep
 RUN apk --no-cache add findutils
-RUN apk --no-cache add go
+RUN apk add go --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 
 # Start action
 ENTRYPOINT ["/entrypoint.sh"]
