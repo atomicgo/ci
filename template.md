@@ -52,10 +52,29 @@
 
 ## Install
 
-```console
-# Execute this command inside your project
-go get -u atomicgo.dev/{{ .Name }}
-```
+<p align="center">
+<table>
+<tbody>
+<td align="center">
+<img width="2000" height="0"><br>
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<img width="2000" height="0">
+</td>
+</tbody>
+</table>
+</p>
+<h3  align="center"><pre>go get atomicgo.dev/{{ .Name }}</pre></h3>
+<p align="center">
+<table>
+<tbody>
+<td align="center">
+<img width="2000" height="0"><br>
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<img width="2000" height="0">
+</td>
+</tbody>
+</table>
+</p>
 
 ```go
 // Add this to your imports
