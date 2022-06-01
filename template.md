@@ -33,7 +33,7 @@
 <p align="center">
 <strong><a href="#install">Get The Module</a></strong>
 |
-<strong><a href="https://pkg.go.dev/github.com/atomicgo/{{ .Name }}#section-documentation" target="_blank">Documentation</a></strong>
+<strong><a href="https://pkg.go.dev/atomicgo.dev/{{ .Name }}#section-documentation" target="_blank">Documentation</a></strong>
 |
 <strong><a href="https://github.com/atomicgo/atomicgo/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></strong>
 |
@@ -54,12 +54,12 @@
 
 ```console
 # Execute this command inside your project
-go get -u github.com/atomicgo/{{ .Name }}
+go get -u atomicgo.dev/{{ .Name }}
 ```
 
 ```go
 // Add this to your imports
-import "github.com/atomicgo/{{ .Name }}"
+import "atomicgo.dev/{{ .Name }}"
 ```
 
 {{ .EmitUsage }}
