@@ -39,8 +39,10 @@ FILE=./.github/custom_readme
 if test -f "$FILE"; then
   echo ".github/custom_readme is present. Not generating a new readme."
 else
+  echo "### Installing Godocdown..."
   go install github.com/robertkrimen/godocdown/godocdown@latest
-  godocdown -template /template.md >README.md
+  echo "### Running Godocdown..."
+  $(go env GOPATH)/bin/godocdown -template /template.md >README.md
 fi
 
 echo "# Running CI System"
