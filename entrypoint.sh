@@ -39,7 +39,7 @@ FILE=./.github/custom_readme
 if test -f "$FILE"; then
   echo ".github/custom_readme is present. Not generating a new readme."
 else
-  go install github.com/robertkrimen/godocdown/godocdown
+  go install github.com/robertkrimen/godocdown/godocdown@latest
   godocdown -template /template.md >README.md
 fi
 
