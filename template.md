@@ -46,12 +46,6 @@
   <img src="https://raw.githubusercontent.com/atomicgo/atomicgo/main/assets/header.png" alt="AtomicGo">
 </p>
 
-## Description
-
-{{ .EmitSynopsis }}
-
-## Install
-
 <p align="center">
 <table>
 <tbody>
@@ -80,6 +74,11 @@
 // Add this to your imports
 import "atomicgo.dev/{{ .Name }}"
 ```
+
+## Description
+
+{{ .EmitSynopsis }}
+
 
 {{ .EmitUsage }}
 
