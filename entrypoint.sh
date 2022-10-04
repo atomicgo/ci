@@ -46,7 +46,7 @@ else
   echo "### Installing gomarkdoc..."
   go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
   echo "### Running gomarkdoc..."
-  gomarkdoc -e -o README.md .
+  $(go env GOPATH)/bin/gomarkdoc -e -o README.md .
 fi
 
 echo "# Running CI System"
