@@ -70,12 +70,11 @@
 </table>
 </p>
 
-## Description
+<!-- gomarkdoc:embed:start -->
 
-{{ .EmitSynopsis }}
+Auto generated documentation will be inserted here.
 
-
-{{ .EmitUsage }}
+<!-- gomarkdoc:embed:end -->
 
 ---
 
