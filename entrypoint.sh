@@ -43,6 +43,10 @@ else
   go install github.com/robertkrimen/godocdown/godocdown@latest
   echo "### Running Godocdown..."
   $(go env GOPATH)/bin/godocdown -template /template.md >README.md
+  echo "### Installing gomarkdoc..."
+  go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
+  echo "### Running gomarkdoc..."
+  gomarkdoc -e -o README.md .
 fi
 
 echo "# Running CI System"
