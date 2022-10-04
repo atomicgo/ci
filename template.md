@@ -19,13 +19,13 @@
 <!-- unittestcount:start --><img src="https://img.shields.io/badge/Unit_Tests-0-magenta?style=flat-square" alt="Unit test count"><!-- unittestcount:end -->
 </a>
 
-<a href="https://github.com/atomicgo/{{ .Name }}/issues">
-<img src="https://img.shields.io/github/issues/atomicgo/{{ .Name }}.svg?style=flat-square" alt="Issues">
-</a>
-
 <a href="https://opensource.org/licenses/MIT" target="_blank">
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License: MIT">
 </a>
+  
+<a href="https://goreportcard.com/report/github.com/atomicgo/{{ .Name }}" target="_blank">
+<img src="https://goreportcard.com/badge/github.com/atomicgo/{{ .Name }}" alt="Go report">
+</a>   
 
 </p>
 
