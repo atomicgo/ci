@@ -50,6 +50,7 @@ else
 fi
 
 echo "# Running CI System"
+go get github.com/pterm/pterm
 go run /main.go
 rm /main.go
 
