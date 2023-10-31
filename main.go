@@ -2,22 +2,26 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"log"
+	"os"
 	"os/exec"
 	"regexp"
 	"strings"
 	"time"
+
+	"github.com/pterm/pterm"
 )
 
 func main() {
-	readmeContent, err := ioutil.ReadFile("./README.md")
+	logger := pterm.DefaultLogger.WithLevel(pterm.LogLevelInfo)
+
+	logger.Info("Reading readme", logger.Args("path", "./README.md"))
+	readmeContent, err := os.ReadFile("./README.md")
 	if err != nil {
-		log.Panic(err)
+		logger.Fatal("Could not read README.md", logger.Args("error", err))
 	}
 
 	var newReadmeContent string
-	fmt.Println(3, "### Counting unit tests...")
+	logger.Info("Counting unit tests...")
 
 	unittestTimeout := make(chan string, 1)
 
@@ -25,11 +29,11 @@ func main() {
 		cmd := exec.Command("bash", "-c", "go test -v -p 1 ./...")
 		json, _ := cmd.CombinedOutput()
 		unitTestCount := fmt.Sprint(strings.Count(string(json), "RUN"))
-		fmt.Println(4, "### Unit test count: "+unitTestCount)
+		logger.Info("Counted unit tests", logger.Args("count", unitTestCount))
 		unittestTimeout <- unitTestCount
 	}()
 
-	fmt.Println(4, "#### Replacing strings in readme")
+	logger.Info("Replacing strings in readme")
 
 	newReadmeContent = string(readmeContent)
 
@@ -37,13 +41,13 @@ func main() {
 	case res := <-unittestTimeout:
 		newReadmeContent = writeBetween("unittestcount", newReadmeContent, `<img src="https://img.shields.io/badge/Unit_Tests-`+res+`-magenta?style=flat-square" alt="Unit test count">`)
 	case <-time.After(time.Minute):
-		fmt.Println(4, "Timeout in counting unit tests!")
+		logger.Error("Unit test count timed out")
 	}
 
-	fmt.Println(4, "### Writing readme")
-	err = ioutil.WriteFile("./README.md", []byte(newReadmeContent), 0600)
+	logger.Info("Writing readme")
+	err = os.WriteFile("./README.md", []byte(newReadmeContent), 0600)
 	if err != nil {
-		log.Panic(err)
+		logger.Fatal("Could not write README.md", logger.Args("error", err))
 	}
 }
 
