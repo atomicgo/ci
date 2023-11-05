@@ -56,6 +56,7 @@ rm /main.go
 
 echo "## Go mod tidy..."
 git checkout go.mod # reset go.mod file
+git checkout go.sum # reset go.sum file
 go mod tidy
 
 echo "## Go fmt..."
