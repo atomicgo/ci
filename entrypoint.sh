@@ -35,8 +35,8 @@ echo "## Getting git tags..."
 git fetch --tags
 
 echo "## Generating readme..."
-FILE=./.github/custom_readme
-INCLUDE_UNEXPORTED=./.github/include_unexported
+FILE=./.github/atomicgo/custom_readme
+INCLUDE_UNEXPORTED=./.github/atomicgo/include_unexported
 if test -f "$FILE"; then
   echo ".github/custom_readme is present. Not generating a new readme."
 else
