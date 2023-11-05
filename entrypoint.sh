@@ -36,6 +36,7 @@ git fetch --tags
 
 echo "## Generating readme..."
 FILE=./.github/custom_readme
+INCLUDE_UNEXPORTED=./.github/include_unexported
 if test -f "$FILE"; then
   echo ".github/custom_readme is present. Not generating a new readme."
 else
@@ -46,8 +47,13 @@ else
   echo "### Installing gomarkdoc..."
   go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
   echo "### Running gomarkdoc..."
-  $(go env GOPATH)/bin/gomarkdoc --repository.url "https://github.com/$REPO_FULLNAME" --repository.default-branch main --repository.path / -e -o README.md .
+  GOMARKDOC_FLAGS=""
+  if test -f "$INCLUDE_UNEXPORTED"; then
+    GOMARKDOC_FLAGS="-u"
+  fi
+  $(go env GOPATH)/bin/gomarkdoc $GOMARKDOC_FLAGS --repository.url "https://github.com/$REPO_FULLNAME" --repository.default-branch main --repository.path / -e -o README.md .
 fi
+
 
 echo "# Running CI System"
 go get github.com/pterm/pterm
