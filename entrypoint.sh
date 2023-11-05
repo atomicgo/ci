@@ -54,10 +54,6 @@ go get github.com/pterm/pterm
 go run /main.go
 rm /main.go
 
-# echo "## Generating changelog..."
-# go install github.com/git-chglog/git-chglog/cmd/git-chglog@latest || true
-# /github/home/go/bin/git-chglog -o CHANGELOG.md --config /.chglog/config.yml || true
-
 echo "## Go mod tidy..."
 git checkout go.mod # reset go.mod file
 go mod tidy
