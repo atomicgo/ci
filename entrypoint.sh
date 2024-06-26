@@ -15,8 +15,8 @@ echo "### Getting branch"
 BRANCH=${GITHUB_REF#*refs/heads/}
 
 if [[ $BRANCH == refs/tags* ]]; then
-  echo "## The push was a tag, aborting!"
-  exit
+	echo "## The push was a tag, aborting!"
+	exit
 fi
 
 echo "### git fetch $BRANCH ..."
@@ -38,22 +38,21 @@ echo "## Generating readme..."
 FILE=./.github/atomicgo/custom_readme
 INCLUDE_UNEXPORTED=./.github/atomicgo/include_unexported
 if test -f "$FILE"; then
-  echo ".github/custom_readme is present. Not generating a new readme."
+	echo ".github/custom_readme is present. Not generating a new readme."
 else
-  echo "### Installing Godocdown..."
-  go install github.com/robertkrimen/godocdown/godocdown@latest
-  echo "### Running Godocdown..."
-  $(go env GOPATH)/bin/godocdown -template /template.md >README.md
-  echo "### Installing gomarkdoc..."
-  go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
-  echo "### Running gomarkdoc..."
-  GOMARKDOC_FLAGS=""
-  if test -f "$INCLUDE_UNEXPORTED"; then
-    GOMARKDOC_FLAGS="-u"
-  fi
-  $(go env GOPATH)/bin/gomarkdoc $GOMARKDOC_FLAGS --repository.url "https://github.com/$REPO_FULLNAME" --repository.default-branch main --repository.path / -e -o README.md .
+	echo "### Installing Godocdown..."
+	go install github.com/robertkrimen/godocdown/godocdown@latest
+	echo "### Running Godocdown..."
+	$(go env GOPATH)/bin/godocdown -template /template.md >README.md
+	echo "### Installing gomarkdoc..."
+	go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
+	echo "### Running gomarkdoc..."
+	GOMARKDOC_FLAGS=""
+	if test -f "$INCLUDE_UNEXPORTED"; then
+		GOMARKDOC_FLAGS="-u"
+	fi
+	$(go env GOPATH)/bin/gomarkdoc $GOMARKDOC_FLAGS --repository.url "https://github.com/$REPO_FULLNAME" --repository.default-branch main --repository.path / -e -o README.md .
 fi
-
 
 echo "# Running CI System"
 go get github.com/pterm/pterm
@@ -64,9 +63,6 @@ echo "## Go mod tidy..."
 git checkout go.mod # reset go.mod file
 git checkout go.sum # reset go.sum file
 go mod tidy
-
-echo "## Go fmt..."
-go fmt ./...
 
 echo "## Staging changes..."
 git add .
