@@ -18,5 +18,8 @@ RUN apk add --no-cache --upgrade grep
 RUN apk --no-cache add findutils
 RUN apk add go --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 
+RUN go install github.com/robertkrimen/godocdown/godocdown@latest
+RUN go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
+
 # Start action
 ENTRYPOINT ["/entrypoint.sh"]
