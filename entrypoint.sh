@@ -68,7 +68,7 @@ go mod tidy
 
 echo "## Staging changes..."
 git add .
-echo "## Amending the previous commit with updated docs..."
-git commit --amend --no-edit || true
-echo "## Force pushing to $BRANCH"
-git push -f origin "$BRANCH"
+echo "## Committing files..."
+git commit -m "docs: autoupdate" || true
+echo "## Pushing to $BRANCH"
+git push -u origin "$BRANCH"
