@@ -1,5 +1,4 @@
-# Use latest alpine image as base
-FROM alpine:latest
+FROM alpine:3.15
 
 # Copy needed stuff into container
 COPY LICENSE README.md /
@@ -9,17 +8,12 @@ COPY template /template
 COPY .chglog /.chglog
 COPY main.go /main.go
 
-# Update packages
-RUN apk update
+RUN apk update && \
+    apk add --no-cache jq bash git sudo grep findutils go
 
-# Install some packages
-RUN apk add jq bash git sudo
-RUN apk add --no-cache --upgrade grep
-RUN apk --no-cache add findutils
-RUN apk add go --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
-
-RUN go install github.com/robertkrimen/godocdown/godocdown@latest
-RUN go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
+RUN go install github.com/robertkrimen/godocdown/godocdown@latest && \
+    go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
 
 # Start action
 ENTRYPOINT ["/entrypoint.sh"]
+

@@ -9,3 +9,4 @@ runs:
   image: "Dockerfile"
   args:
     - ${{ inputs.myInput }}
+

@@ -27,8 +27,8 @@ func main() {
 
 	go func() {
 		cmd := exec.Command("bash", "-c", "go test -v -p 1 ./...")
-		json, _ := cmd.CombinedOutput()
-		unitTestCount := fmt.Sprint(strings.Count(string(json), "RUN"))
+		output, _ := cmd.CombinedOutput()
+		unitTestCount := fmt.Sprint(strings.Count(string(output), "RUN"))
 		logger.Info("Counted unit tests", logger.Args("count", unitTestCount))
 		unittestTimeout <- unitTestCount
 	}()
@@ -54,8 +54,8 @@ func main() {
 func writeBetween(name string, original string, insertText string) string {
 	beforeRegex := regexp.MustCompile(`(?ms).*<!-- ` + name + `:start -->`)
 	afterRegex := regexp.MustCompile(`(?ms)<!-- ` + name + `:end -->.*`)
-	before := beforeRegex.FindAllString(original, 1)[0]
-	after := afterRegex.FindAllString(original, 1)[0]
+	before := beforeRegex.FindString(original)
+	after := afterRegex.FindString(original)
 
 	ret := before
 	ret += insertText

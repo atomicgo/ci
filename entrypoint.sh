@@ -11,7 +11,7 @@ echo "## Initializing git repo..."
 git init
 echo "### Adding git remote..."
 git remote add origin https://x-access-token:$ACCESS_TOKEN@github.com/$REPO_FULLNAME.git
-echo "### Getting branch"
+echo "### Fetching branch"
 BRANCH=${GITHUB_REF#*refs/heads/}
 
 if [[ $BRANCH == refs/tags* ]]; then
@@ -19,9 +19,8 @@ if [[ $BRANCH == refs/tags* ]]; then
   exit
 fi
 
-echo "### git fetch $BRANCH ..."
-git fetch origin "$BRANCH"
-echo "### Branch: $BRANCH (ref: $GITHUB_REF )"
+git fetch --depth=1 origin "$BRANCH"
+echo "### Branch: $BRANCH (ref: $GITHUB_REF)"
 git checkout "$BRANCH"
 
 echo "## Login into git..."
@@ -32,7 +31,7 @@ echo "## Ignore workflow files (we may not touch them)"
 git update-index --assume-unchanged .github/workflows/*
 
 echo "## Getting git tags..."
-git fetch --tags
+git fetch --tags --depth=1
 
 echo "## Generating readme..."
 FILE=./.github/atomicgo/custom_readme
@@ -45,8 +44,7 @@ else
   echo "### Running gomarkdoc..."
   GOMARKDOC_FLAGS="--template-file example=/template/example.gotxt"
   if test -f "$INCLUDE_UNEXPORTED"; then
-    # add -u flag to include unexported functions
-    GOMARKDOC_FLAGS+="-u"
+    GOMARKDOC_FLAGS+=" -u"
   fi
 
   $(go env GOPATH)/bin/gomarkdoc $GOMARKDOC_FLAGS --repository.url "https://github.com/$REPO_FULLNAME" --repository.default-branch main --repository.path / -e -o README.md .
@@ -68,3 +66,4 @@ echo "## Committing files..."
 git commit -m "docs: autoupdate" || true
 echo "## Pushing to $BRANCH"
 git push -u origin "$BRANCH"
+
