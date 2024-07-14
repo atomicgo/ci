@@ -3,9 +3,7 @@ FROM golang:alpine
 # Copy needed stuff into container
 COPY LICENSE README.md /
 COPY entrypoint.sh /entrypoint.sh
-COPY template.md /template.md
 COPY template /template
-COPY .chglog /.chglog
 COPY main.go /main.go
 
 RUN apk update && \

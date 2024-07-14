@@ -40,7 +40,7 @@ if test -f "$FILE"; then
   echo ".github/custom_readme is present. Not generating a new readme."
 else
   echo "### Running Godocdown..."
-  $(go env GOPATH)/bin/godocdown -template /template.md >README.md
+  $(go env GOPATH)/bin/godocdown -template /template/readme.md >README.md
   echo "### Running gomarkdoc..."
   GOMARKDOC_FLAGS="--template-file example=/template/example.gotxt"
   if test -f "$INCLUDE_UNEXPORTED"; then
@@ -66,4 +66,3 @@ echo "## Committing files..."
 git commit -m "docs: autoupdate" || true
 echo "## Pushing to $BRANCH"
 git push -u origin "$BRANCH"
-
