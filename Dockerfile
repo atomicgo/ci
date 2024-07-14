@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM golang:alpine
 
 # Copy needed stuff into container
 COPY LICENSE README.md /
@@ -9,10 +9,10 @@ COPY .chglog /.chglog
 COPY main.go /main.go
 
 RUN apk update && \
-    apk add --no-cache jq bash git sudo grep findutils go
+  apk add jq bash git sudo grep findutils
 
 RUN go install github.com/robertkrimen/godocdown/godocdown@latest && \
-    go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
+  go install github.com/princjef/gomarkdoc/cmd/gomarkdoc@latest
 
 # Start action
 ENTRYPOINT ["/entrypoint.sh"]
